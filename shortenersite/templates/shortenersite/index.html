@@ -1,0 +1,23 @@
+{% extends "shortenersite/base.html" %}
+  
+{% block title %}URL Shortner - Make your URL shorter!{% endblock %}
+  
+{% block content %}  
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="col-sm-9 no-padding-left padding-top">
+            <input type="text" name="hash" id="hash" class="form-control input-sm" placeholder="enter hash here (optional)" />
+            <br>
+            <input type="text" name="url" id="url" class="form-control input-sm" placeholder="enter url here (example: http://www.facebook.com)" />
+            <br>
+        </div>
+        <div class="col-sm-9 no-padding-left">
+            {% csrf_token %}
+            <button id="submitButton" class="btn btn-primary">Submit</button></p> 
+        </div>
+    </div>
+    <div class="panel-footer">
+        <span id="url-result">Enter the URL above and click submit!</span>
+    </div>
+</div>
+{% endblock %}
